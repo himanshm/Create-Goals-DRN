@@ -11,7 +11,7 @@ import {
 
 interface Goal {
   text: string;
-  key: string;
+  id: string;
 }
 
 export default function App() {
@@ -25,7 +25,7 @@ export default function App() {
   function addGoalHandler() {
     setCourseGoals((currentCourseGoals) => [
       ...currentCourseGoals,
-      { text: enteredGoalText, key: Math.random().toString() },
+      { text: enteredGoalText, id: Math.random().toString() },
     ]);
   }
   return (
@@ -47,6 +47,9 @@ export default function App() {
                 <Text style={styles.goalText}>{itemData.item.text}</Text>
               </View>
             );
+          }}
+          keyExtractor={(item, index) => {
+            return item.id;
           }}
         />
       </View>

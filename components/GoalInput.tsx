@@ -3,10 +3,11 @@ import { View, TextInput, Button, StyleSheet, Modal } from 'react-native';
 
 type GoalInputProps = {
   showModal: boolean;
+  onCloseModal: () => void;
   onAddGoal: (text: string) => void;
 };
 
-function GoalInput({ onAddGoal, showModal }: GoalInputProps) {
+function GoalInput({ onAddGoal, onCloseModal, showModal }: GoalInputProps) {
   const [enteredGoalText, setEnteredGoalText] = useState('');
 
   function goalInputHandler(enteredText: string) {
@@ -32,7 +33,7 @@ function GoalInput({ onAddGoal, showModal }: GoalInputProps) {
             <Button title='Add Goal' onPress={addGoalHandler} />
           </View>
           <View style={styles.button}>
-            <Button title='Cancel' />
+            <Button title='Cancel' onPress={onCloseModal} />
           </View>
         </View>
       </View>

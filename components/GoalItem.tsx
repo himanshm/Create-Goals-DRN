@@ -29,7 +29,7 @@ export default GoalItem;
 const styles = StyleSheet.create({
   goalItem: {
     margin: 8,
-    backgroundColor: '#5E0ACC',
+    backgroundColor: '#B3C8CF',
     borderRadius: 6,
   },
   pressedItem: {
